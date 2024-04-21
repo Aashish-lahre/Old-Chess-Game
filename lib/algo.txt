@@ -1,0 +1,110 @@
+working of king...
+
+concepts
+    pin - normal pin, discover pin, double pin.
+    check - normal check, discover check, double check.
+    illegel move - restriction on king movements and others.
+    stalemate.
+
+
+    
+pin.....
+    if a character is pressed
+        check if it is pinned or not
+
+
+        how to pin.....
+            loop on every opponent kill range
+            if character present on opponent kill range
+            if true
+                temporaraily update positions map where that character is not present
+                now check again if this paticular opponent attacks our king with his kill range
+                if true
+                    the character is pinned
+                    break the loop
+                if false
+                    the character is not pinned
+                    loop continue till there is no opponent left
+            if false
+                loop continue till there is no opponent left
+
+        if pin true-
+            kill range in          available direction
+                left                    right-left
+                topLeft                 bottomRight - topLeft
+                top                     bottom-top
+                topRight                bottomLeft - topRight
+                right                   left-right
+                bottomRight             topLeft-bottomRight
+                bottom                  top-bottom
+                bottomLeft              topRight-bottomLeft
+        if pin false-
+            move as normal
+            
+check.....
+
+
+    when character pressed
+    danger = true
+        loop every team member if they are attacking opponent king with their kill range
+
+
+        check if more than 1 member attacking the opponent king
+        if true-
+            no attacking
+            no blocking
+            only escaping
+
+        if only 1 member is attacking the opponent king
+        if true-
+            check if any opponent attacking that member
+            if true-
+                check if that opponent is pinned or not
+                if pinned true - 
+                    do nothing....
+                if pinned false -
+                    danger = false
+                    break loop
+            check if any opponent blocking the attack of our member
+            if true-
+                check if that opponent is pinned or not
+                if pinned true - 
+                    do nothing....
+                if pinned false -
+                    danger = false
+                    break loop
+
+            check if opponent king have any safe ground to escape
+            if true-
+                do nothing
+            if false-
+                it is checkmate !!!
+
+
+
+        if true-
+            
+            check if any opponent is blocking the check of our member
+
+            if true-
+
+
+
+        if false-
+            chance = false
+
+king illegel moves....
+    1. cant kill someone who is protected by its member.
+    2. cant go to the box which is in kill range of opponent.
+    
+stalemate....
+    if character is pressed
+   
+            
+
+
+
+
+
+working on pin....
+
